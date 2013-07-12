@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOMNodeAppear Example</title>
+    <script src="jquery-2.0.3.js"></script>
+    <script src="../jquery.domappear.js"></script>
+    <script type="text/javascript">
+
+      $(".newnode").DOMNodeAppear(function() {
+        alert("your new node is in the DOM");
+      });
+
+      setTimeout(function() {
+        $("body").append("<div class=\"newnode\">New node inserted!</div>");
+      }, 3000);
+
+    </script>
+  </head>
+  <body>
+    <p>In 3 seconds, we'll append a div to this document...</p>
+    <br />
+  </body>
+</html>
