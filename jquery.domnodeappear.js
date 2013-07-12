@@ -26,4 +26,5 @@
     });
 
   };
+  jQuery.fn.onAppear = jQuery.fn.DOMNodeAppear;
 })(jQuery);
