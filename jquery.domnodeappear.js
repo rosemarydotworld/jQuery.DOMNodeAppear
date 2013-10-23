@@ -17,7 +17,7 @@
     $("head").append("<style class=\"" + options.stylesClass + "-animation\">" + options.styles + "</style>")
 
     // on animation start, execute the callback
-    $(document).on('webkitAnimationStart animationstart', function(e){
+    $(document).on('animationstart webkitAnimationStart oanimationstart MSAnimationStart', function(e){
       if (e.originalEvent.animationName == 'nodeInserted') {
         if (typeof callback == 'function') {
           callback.call(this);
