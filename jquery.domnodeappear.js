@@ -18,9 +18,10 @@
 
     // on animation start, execute the callback
     $(document).on('animationstart webkitAnimationStart oanimationstart MSAnimationStart', function(e){
+      var self = $(e.target);
       if (e.originalEvent.animationName == 'nodeInserted') {
         if (typeof callback == 'function') {
-          callback.call(this);
+          callback.call(self);
         }
       }
     });
