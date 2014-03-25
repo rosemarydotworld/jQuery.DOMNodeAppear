@@ -1,7 +1,7 @@
 (function($) {
   $.fn.DOMNodeAppear = function(callback) {
 
-  	var $this = $(this);
+    var $this = $(this);
 
     var options = {
       keyframes: "@keyframes nodeInserted {from {clip: rect(1px, auto, auto, auto); } to {clip: rect(0px, auto, auto, auto); } } @-moz-keyframes nodeInserted {from {clip: rect(1px, auto, auto, auto); } to {clip: rect(0px, auto, auto, auto); } } @-webkit-keyframes nodeInserted {from {clip: rect(1px, auto, auto, auto); } to {clip: rect(0px, auto, auto, auto); } } @-ms-keyframes nodeInserted {from {clip: rect(1px, auto, auto, auto); } to {clip: rect(0px, auto, auto, auto); } } @-o-keyframes nodeInserted {from {clip: rect(1px, auto, auto, auto); } to {clip: rect(0px, auto, auto, auto); } }, ",
@@ -21,7 +21,7 @@
     // on animation start, execute the callback
     $(document).on('animationstart webkitAnimationStart oanimationstart MSAnimationStart', function(e){
       var self = $(e.target);
-      if (e.originalEvent.animationName == 'nodeInserted' && self.is(options.selector)) {
+      if (e.originalEvent.animationName == 'nodeInserted') {
         if (typeof callback == 'function') {
           callback.call(self);
         }
