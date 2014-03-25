@@ -1,11 +1,13 @@
 (function($) {
   $.fn.DOMNodeAppear = function(callback) {
 
+  	var $this = $(this);
+
     var options = {
       keyframes: "@keyframes nodeInserted {from {clip: rect(1px, auto, auto, auto); } to {clip: rect(0px, auto, auto, auto); } } @-moz-keyframes nodeInserted {from {clip: rect(1px, auto, auto, auto); } to {clip: rect(0px, auto, auto, auto); } } @-webkit-keyframes nodeInserted {from {clip: rect(1px, auto, auto, auto); } to {clip: rect(0px, auto, auto, auto); } } @-ms-keyframes nodeInserted {from {clip: rect(1px, auto, auto, auto); } to {clip: rect(0px, auto, auto, auto); } } @-o-keyframes nodeInserted {from {clip: rect(1px, auto, auto, auto); } to {clip: rect(0px, auto, auto, auto); } }, ",
-      selector: $(this).selector,
-      stylesClass: $(this).selector.replace(".", ""),
-      styles: $(this).selector + " { animation-name: nodeInserted; -webkit-animation-name: nodeInserted; animation-duration: 0.001s; -webkit-animation-duration: 0.001s; }"
+      selector: $this.selector,
+      stylesClass: $this.selector.replace(".", ""),
+      styles: $this.selector + " { animation-name: nodeInserted; -webkit-animation-name: nodeInserted; animation-duration: 0.001s; -webkit-animation-duration: 0.001s; }"
     }
 
     // if the keyframes aren't present, add them in a style element
@@ -17,13 +19,15 @@
     $("head").append("<style class=\"" + options.stylesClass + "-animation\">" + options.styles + "</style>")
 
     // on animation start, execute the callback
-    $(document).on('webkitAnimationStart animationstart', function(e){
-      if (e.originalEvent.animationName == 'nodeInserted') {
+    $(document).on('animationstart webkitAnimationStart oanimationstart MSAnimationStart', function(e){
+      var self = $(e.target);
+      if (e.originalEvent.animationName == 'nodeInserted' && self.is(options.selector)) {
         if (typeof callback == 'function') {
-          callback.call(this);
+          callback.call(self);
         }
       }
     });
 
   };
+  jQuery.fn.onAppear = jQuery.fn.DOMNodeAppear;
 })(jQuery);
