@@ -4,7 +4,7 @@
     var $this = $(this);
 
     var options = {
-      keyframes: "@keyframes nodeInserted {from {clip: rect(1px, auto, auto, auto); } to {clip: rect(0px, auto, auto, auto); } } @-moz-keyframes nodeInserted {from {clip: rect(1px, auto, auto, auto); } to {clip: rect(0px, auto, auto, auto); } } @-webkit-keyframes nodeInserted {from {clip: rect(1px, auto, auto, auto); } to {clip: rect(0px, auto, auto, auto); } } @-ms-keyframes nodeInserted {from {clip: rect(1px, auto, auto, auto); } to {clip: rect(0px, auto, auto, auto); } } @-o-keyframes nodeInserted {from {clip: rect(1px, auto, auto, auto); } to {clip: rect(0px, auto, auto, auto); } }, ",
+      keyframes: "@keyframes nodeInserted { from { opacity: 0.99; } to { opacity: 0.99; } } @-moz-keyframes nodeInserted { from { opacity: 0.99; } to { opacity: 0.99; } } @-webkit-keyframes nodeInserted { from { opacity: 0.99; } to { opacity: 0.99; } } @-ms-keyframes nodeInserted { from { opacity: 0.99; } to { opacity: 0.99; } } @-o-keyframes nodeInserted { from { opacity: 0.99; } to { opacity: 0.99; } }, ",
       selector: $this.selector,
       stylesClass: $this.selector.replace(".", ""),
       styles: $this.selector + " { animation-name: nodeInserted; -webkit-animation-name: nodeInserted; animation-duration: 0.001s; -webkit-animation-duration: 0.001s; }"
