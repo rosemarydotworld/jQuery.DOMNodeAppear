@@ -4,7 +4,7 @@
     var $this = $(this);
 
     var options = {
-      keyframes: "@keyframes nodeInserted { from { opacity: 0; } to { opacity: 0.99; } } @-moz-keyframes nodeInserted { from { opacity: 0; } to { opacity: 0.99; } } @-webkit-keyframes nodeInserted { from { opacity: 0; } to { opacity: 0.99; } } @-ms-keyframes nodeInserted { from { opacity: 0; } to { opacity: 0.99; } } @-o-keyframes nodeInserted { from { opacity: 0; } to { opacity: 0.99; } }, ",
+      keyframes: "@keyframes nodeInserted { from { opacity: 1; } to { opacity: 1; } } @-moz-keyframes nodeInserted { from { opacity: 1; } to { opacity: 1; } } @-webkit-keyframes nodeInserted { from { opacity: 1; } to { opacity: 1; } } @-ms-keyframes nodeInserted { from { opacity: 1; } to { opacity: 1; } } @-o-keyframes nodeInserted { from { opacity: 1; } to { opacity: 1; } }, ",
       selector: $this.selector,
       stylesClass: $this.selector.replace(".", ""),
       styles: $this.selector + " { animation-name: nodeInserted; -webkit-animation-name: nodeInserted; animation-duration: 0.001s; -webkit-animation-duration: 0.001s; }"
