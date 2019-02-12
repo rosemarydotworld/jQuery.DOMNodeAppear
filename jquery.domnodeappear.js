@@ -1,13 +1,13 @@
 (function($) {
-  $.fn.DOMNodeAppear = function(callback) {
+  $.fn.DOMNodeAppear = function(selector, callback) {
 
     var $this = $(this);
 
     var options = {
       keyframes: "@keyframes nodeInserted { from { opacity: 1; } to { opacity: 1; } } @-moz-keyframes nodeInserted { from { opacity: 1; } to { opacity: 1; } } @-webkit-keyframes nodeInserted { from { opacity: 1; } to { opacity: 1; } } @-ms-keyframes nodeInserted { from { opacity: 1; } to { opacity: 1; } } @-o-keyframes nodeInserted { from { opacity: 1; } to { opacity: 1; } }, ",
-      selector: $this.selector,
-      stylesClass: $this.selector.replace(".", ""),
-      styles: $this.selector + " { animation-name: nodeInserted; -webkit-animation-name: nodeInserted; animation-duration: 0.001s; -webkit-animation-duration: 0.001s; }"
+      selector: selector,
+      stylesClass: selector.replace(".", ""),
+      styles: selector + " { animation-name: nodeInserted; -webkit-animation-name: nodeInserted; animation-duration: 0.001s; -webkit-animation-duration: 0.001s; }"
     }
 
     // if the keyframes aren't present, add them in a style element
