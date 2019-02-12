@@ -6,9 +6,9 @@
     <script src="../jquery.domnodeappear.js"></script>
     <script type="text/javascript">
 
-      $(".newnode").DOMNodeAppear(".newnode", function() {
+      $(".newnode").DOMNodeAppear(function() {
         alert("your new node is in the DOM");
-      });
+      }, ".newnode");
 
       setTimeout(function() {
         $("body").append("<div class=\"newnode\">New node inserted!</div>");

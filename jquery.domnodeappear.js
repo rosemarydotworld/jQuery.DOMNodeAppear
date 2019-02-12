@@ -1,7 +1,13 @@
 (function($) {
-  $.fn.DOMNodeAppear = function(selector, callback) {
+  $.fn.DOMNodeAppear = function(callback, selector) {
 
     var $this = $(this);
+
+    selector = selector || (typeof $this.selector === 'function' && $this.selector);
+    if (!selector) {
+      console.log('Please update your calls to jQuery.DOMNodeAppear so that they explicitly pass the selector as a second argument after the callback.');
+      return false;
+    }
 
     var options = {
       keyframes: "@keyframes nodeInserted { from { opacity: 1; } to { opacity: 1; } } @-moz-keyframes nodeInserted { from { opacity: 1; } to { opacity: 1; } } @-webkit-keyframes nodeInserted { from { opacity: 1; } to { opacity: 1; } } @-ms-keyframes nodeInserted { from { opacity: 1; } to { opacity: 1; } } @-o-keyframes nodeInserted { from { opacity: 1; } to { opacity: 1; } }, ",
