@@ -8,7 +8,7 @@
 
       $(".newnode").DOMNodeAppear(function() {
         alert("your new node is in the DOM");
-      });
+      }, ".newnode");
 
       setTimeout(function() {
         $("body").append("<div class=\"newnode\">New node inserted!</div>");
